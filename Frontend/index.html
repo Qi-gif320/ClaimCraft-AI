@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ClaimCraft AI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fb;
+            color: #222;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #182848;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #dce4f5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            margin: 60px auto;
+            background-color: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #182848;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .upload-box {
+            border: 2px dashed #526ca8;
+            border-radius: 10px;
+            padding: 35px 20px;
+            text-align: center;
+            background-color: #f8faff;
+        }
+
+        .upload-box p {
+            margin-bottom: 15px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background-color: #243b6b;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #182848;
+        }
+
+        .note {
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>ClaimCraft AI</h1>
+        <p>Academic Claim Verification System</p>
+    </header>
+
+    <!-- Main Section -->
+    <div class="container">
+
+        <h2>Verify Your Academic Claims</h2>
+
+        <p class="description">
+            Upload your academic document to identify claims
+            and check them against supporting research evidence.
+        </p>
+
+        <!-- Document Upload Form -->
+        <form action="/upload" method="POST"
+              enctype="multipart/form-data">
+
+            <div class="upload-box">
+
+                <p><strong>Upload Your Academic Document</strong></p>
+
+                <p>Select a PDF or DOCX file</p>
+
+                <input
+                    type="file"
+                    name="document"
+                    accept=".pdf,.docx"
+                    required
+                >
+
+            </div>
+
+            <button type="submit">
+                Upload Document
+            </button>
+
+        </form>
+
+        <p class="note">
+            Supported formats: PDF and DOCX | Maximum size: 20 MB
+        </p>
+
+    </div>
+
+</body>
+</html>

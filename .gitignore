@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+uploads/*
+!uploads/.gitkeep
+*.pdf
+*.docx
+.ipynb_checkpoints/
+.DS_Store

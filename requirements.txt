@@ -1,0 +1,8 @@
+Flask
+Werkzeug
+PyMuPDF
+python-docx
+transformers
+sentence-transformers
+torch
+requests
