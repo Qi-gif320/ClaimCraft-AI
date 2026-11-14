@@ -6,20 +6,27 @@ from html import escape
 from uuid import uuid4
 import os
 import sys
+from pathlib import Path
 
 # ==========================================
 # STEP 1: PROJECT PATHS
 # ==========================================
 
-PROJECT_FOLDER = Path("/content/drive/MyDrive/ClaimCraft-AI")
-FRONTEND_FOLDER = PROJECT_FOLDER / "Frontend"
-BACKEND_FOLDER = PROJECT_FOLDER / "Backend"
-UPLOAD_FOLDER = PROJECT_FOLDER / "uploads"
+if Path("/content/drive/MyDrive/ClaimCraft-AI").exists():
+    # Google Colab
+    PROJECT_FOLDER = Path("/content/drive/MyDrive/ClaimCraft-AI")
+    BACKEND_FOLDER = PROJECT_FOLDER / "Backend"
+    FRONTEND_FOLDER = PROJECT_FOLDER / "Frontend"
+else:
+    # Vercel
+    BACKEND_FOLDER = Path(__file__).resolve().parent
+    PROJECT_FOLDER = BACKEND_FOLDER.parent
+    FRONTEND_FOLDER = PROJECT_FOLDER / "Frontend"
 
-if not PROJECT_FOLDER.exists():
-    raise FileNotFoundError("ClaimCraft-AI folder not found!")
+UPLOAD_FOLDER = Path("/tmp/claimcraft_uploads") if os.environ.get("VERCEL") else PROJECT_FOLDER / "uploads"
 
 UPLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
+
 
 # ==========================================
 # STEP 2: FIND PYTHON MODULES
